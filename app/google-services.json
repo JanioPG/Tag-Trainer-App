@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "524735334062",
+    "project_id": "tag-trainer-33860",
+    "storage_bucket": "tag-trainer-33860.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:524735334062:android:f0188b10899a325a2ecf3f",
+        "android_client_info": {
+          "package_name": "com.example.tagtrainermobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "524735334062-gfem40va61ibu4onvdoh461sno3qdkpi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDed6xNKxm1ylv1TL7hJmpImPCIpMXuCLA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "524735334062-gfem40va61ibu4onvdoh461sno3qdkpi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

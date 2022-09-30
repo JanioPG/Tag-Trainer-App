@@ -1,0 +1,2 @@
+rootProject.name = "TagTrainerMobile"
+include ':app'
