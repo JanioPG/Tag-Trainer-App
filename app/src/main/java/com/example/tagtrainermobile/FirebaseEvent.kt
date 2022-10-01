@@ -154,6 +154,10 @@ object FirebaseEvent {
         firebaseAnalytics.logEvent("ecommerce_purchase" , bundle)
     }
 
+    fun firebaseSelectContent(contentType: String, itemID: String) {
+
+    }
+
     fun recordScreenView() {
         init()
         val screen_name = "Tela Teste"
