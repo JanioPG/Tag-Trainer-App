@@ -37,7 +37,7 @@ object FirebaseEvent {
     fun firebaseRemoveFromCart(product_name: String, product_price: Double) {
         init()
         val itemRemoved = Bundle().apply {
-            //teste - start
+            // teste - start
             putString(FirebaseAnalytics.Param.ITEM_ID, "id_test_123")
             putString(FirebaseAnalytics.Param.ITEM_BRAND, "Marca_test_123")
             putString(FirebaseAnalytics.Param.ITEM_CATEGORY, "category_test_123")
@@ -154,30 +154,42 @@ object FirebaseEvent {
         firebaseAnalytics.logEvent("ecommerce_purchase" , bundle)
     }
 
-    fun firebaseSelectContent(contentType: String, itemID: String) {
 
-    }
-
-    fun recordScreenView() {
+    fun recordScreenView(screen_name: String) {
         init()
-        val screen_name = "Tela Teste"
+        val name = screen_name
         val bundle = Bundle().apply {
-            putString(FirebaseAnalytics.Param.SCREEN_NAME, screen_name)
+            putString(FirebaseAnalytics.Param.SCREEN_NAME, name)
             putString(FirebaseAnalytics.Param.SCREEN_CLASS, "CartActivity_MyTeste")
         }
         firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SCREEN_VIEW, bundle)
     }
-// remover
-    //object Constants {
-    //    const val LABEL = "label"
-    //    const val ACTION = "action"
-    //    const val CATEGORY = "category"
-    //    const val VIEW = "view"
-    //    const val IMPERSONATED = "impersonated"
-    //    const val SELECT_CONTENT = FirebaseAnalytics.Event.SELECT_CONTENT
-    //    const val VIEW_ITEM_LIST = FirebaseAnalytics.Event.VIEW_ITEM_LIST
-    //    const val SELECT_PROMOTION = FirebaseAnalytics.Event.SELECT_PROMOTION
-    //    const val VIEW_PROMOTION = FirebaseAnalytics.Event.VIEW_PROMOTION
 
-//    }
+    fun viewItem() {
+        init()
+        val items = arrayListOf<Bundle>()
+        items.add(
+            Bundle().apply {
+                putString(FirebaseAnalytics.Param.ITEM_ID, "item_id_banner")
+                putString(FirebaseAnalytics.Param.ITEM_NAME, "item_name_banner")
+                //putString(FirebaseAnalytics.Param.CREATIVE_NAME, "creative_name_banner")
+                //putInt(FirebaseAnalytics.Param.CREATIVE_SLOT, 0)
+                putString("creative", "creative_name_banner")
+                putInt("position", 0)
+            }
+        )
+        val bundle = Bundle().apply {
+            putParcelableArrayList(FirebaseAnalytics.Param.ITEMS, items)
+            putBoolean("productInTheCart", true)
+            putString("directSales", "Test")
+            putBoolean("loggedUser", true)
+            putString("dsSpace", "Test_dsSpace")
+            putString("dsType", "Test_dsSpace")
+            putString("directSalesId", "id123")
+            putString("region", "BR")
+            putString(FirebaseAnalytics.Param.CONTENT_TYPE, "Promotion")
+        }
+
+        firebaseAnalytics.logEvent(FirebaseAnalytics.Event.VIEW_ITEM, bundle)
+    }
 }

@@ -34,7 +34,7 @@ class CartActivity : AppCompatActivity() {
         setTableForCartProducts()
         cartTotalPrice()
         // [START set_current_screen]
-        FirebaseEvent.recordScreenView()
+        FirebaseEvent.recordScreenView("Carrinho")
         // [END set_current_screen]
         setCheckoutButtonConfig()
 

@@ -88,6 +88,7 @@ class ProductActivity : AppCompatActivity() {
 
         // Teste - Janio
         FirebaseEvent.firebaseAddToCart(productAdded)
+        FirebaseEvent.viewItem()
         // End
 
         Snackbar.make(v, "Produto Adicionado ao carrinho: " + productAdded.name, Snackbar.LENGTH_LONG)

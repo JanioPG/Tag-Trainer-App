@@ -32,11 +32,12 @@ class HomeActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_home)
 
+        FirebaseEvent.recordScreenView("Home")
+
         setListProducts()
         setHomeBanners()
         homeClickButton()
         setHomeCards()
-        FirebaseEvent.recordScreenView()
     }
 
     fun setListProducts() {
