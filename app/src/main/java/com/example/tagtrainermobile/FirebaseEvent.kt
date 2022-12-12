@@ -54,12 +54,30 @@ object FirebaseEvent {
         }
     }
 
-    fun firebaseSelectPromotion(promotion_name: String, promotion_id: String) {
+    fun firebaseSelectContent(promotion_name: String, promotion_id: String) {
         init()
-        firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_PROMOTION) {
-            param(FirebaseAnalytics.Param.PROMOTION_ID, promotion_id)
-            param(FirebaseAnalytics.Param.PROMOTION_NAME, promotion_name)
+
+        val promo1 = Bundle().apply {
+            putString(FirebaseAnalytics.Param.ITEM_ID, "BR123-Test")
+            putString(FirebaseAnalytics.Param.ITEM_NAME, "Promtion name test")
+            putString(FirebaseAnalytics.Param.CREATIVE_NAME, "test_promo.jpg")
+            putString(FirebaseAnalytics.Param.CREATIVE_SLOT, "1")
         }
+
+        val params = Bundle().apply {
+            putString("banner", "true")
+            putString(FirebaseAnalytics.Param.CONTENT_TYPE, "Promotion")
+            putBoolean("productInTheCart", true)
+            putString("directSales", "test01")
+            putBoolean("loggedUser", true)
+            putString("dsSpace", "test01")
+            putString("dsType", "test01")
+            putString("directSalesId", "ID123")
+            putString("region", "BR")
+            putParcelableArrayList("promotions", arrayListOf(promo1))
+        }
+
+        firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, params)
     }
 
     // a partir desse método, ver o encapsulamento de scripts (repetidos)
